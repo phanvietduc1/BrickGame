@@ -7,7 +7,7 @@ var ball = {
     dx: 5,
     dy: 2,
     radius: 20,
-};
+}
 
 function drawBall() {
     context.beginPath();
@@ -18,10 +18,10 @@ function drawBall() {
 }   
 
 function handleBallCollideBounds() {
-    if (ball.x > canvas.width || ball.x < 0) {
+    if (ball.x < ball.radius || ball.x > canvas.width - ball.radius) {
         ball.dx = -ball.dx;
     }
-    if (ball.y < 0 || ball.y > canvas.height) {
+    if (ball.y < ball.radius || ball.y > canvas.height - ball.radius) {
         ball.dy = -ball.dy;
     }
 }
